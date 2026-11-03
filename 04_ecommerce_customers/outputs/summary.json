@@ -1,0 +1,74 @@
+{
+  "kind": "ecommerce",
+  "title": "E-commerce Customer Analysis",
+  "metrics": [
+    [
+      "Identified customers",
+      "4,338"
+    ],
+    [
+      "Identified invoices",
+      "18,532"
+    ],
+    [
+      "Average invoice value",
+      "£480.87"
+    ],
+    [
+      "90-day repeat rate",
+      "47.7%"
+    ]
+  ],
+  "findings": [
+    "1,607 of 3,370 eligible customers made a second observed invoice within 90 calendar days.",
+    "Average identified invoice value was £480.87, excluding cancellation and nonpositive lines.",
+    "132,220 otherwise qualifying lines lack customer IDs and are excluded from customer analysis."
+  ],
+  "action": "Test a post-purchase message using a randomized holdout and track 90-day repeat purchases and contribution margin among eligible customers.",
+  "chart": {
+    "title": "90-day repeat rate by first observed month",
+    "categories": [
+      "2010-12",
+      "2011-01",
+      "2011-02",
+      "2011-03",
+      "2011-04",
+      "2011-05",
+      "2011-06",
+      "2011-07",
+      "2011-08",
+      "2011-09"
+    ],
+    "values": [
+      59.5,
+      48.9,
+      43.9,
+      41.8,
+      42.0,
+      38.4,
+      38.8,
+      43.6,
+      46.2,
+      58.5
+    ],
+    "unit": "Eligible customers repeating (%)"
+  },
+  "problem": "How often did identifiable customers place another invoice within a comparable 90-day observation period?",
+  "grain": "The source is invoice-line data from a UK online retailer, 1 Dec 2010 to 9 Dec 2011. This analysis groups positive lines into customer/invoice purchases.",
+  "definitions": [
+    "An order is a distinct CustomerID and InvoiceNo combination in the cleaned data.",
+    "Average invoice value = total included line value for identified customers ÷ distinct identified customer/invoice orders.",
+    "First observed purchase is the earliest included invoice in this dataset, not necessarily a lifetime first purchase.",
+    "90-day repeat rate = eligible customers with at least two distinct invoices by 90 calendar days after first observed purchase ÷ eligible customers.",
+    "Eligible means first observed purchase is at least 90 calendar days before the final observed date. Same-day distinct invoices count."
+  ],
+  "caveats": "Only identified transactions are included. The dataset has no pre-window customer history, and the source is a gift retailer with wholesale customers. Cancellation and negative lines are excluded without matching to original invoices, so values are not net of returns. Observed repeat is not lifetime retention; customers may place orders outside the data window.",
+  "nextsteps": [
+    "Reconcile returns and join earlier order history to distinguish new customers from first observed customers.",
+    "Compare mature cohorts over equal follow-up windows and segment wholesale accounts separately.",
+    "Randomize a retention intervention and measure incremental gross profit after message costs."
+  ],
+  "quality": "541,909 source lines; 9,288 cancellation-prefixed lines; 11,805 nonpositive quantity or price lines; 11,805 excluded by either rule; 135,080 source lines lack customer ID. These categories overlap. 5,268 exact duplicate-looking rows are retained because they may represent distinct invoice lines. Among otherwise qualifying lines, 132,220 lack customer ID and are excluded from customer metrics.",
+  "citation": "Chen, D. (2015), Online Retail, UCI Machine Learning Repository, https://doi.org/10.24432/C5BW33 (CC BY 4.0).",
+  "source": "https://archive.ics.uci.edu/dataset/352/online+retail"
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "attrition",
+  "title": "Employee Attrition Analysis",
+  "metrics": [
+    [
+      "Total quits rate",
+      "1.9%"
+    ],
+    [
+      "Highest industry",
+      "3.5%"
+    ],
+    [
+      "Lowest industry",
+      "0.5%"
+    ],
+    [
+      "Reference month",
+      "Aug 2026"
+    ]
+  ],
+  "findings": [
+    "Accommodation and food services has the highest listed quits rate at 3.5%.",
+    "Federal government has the lowest listed rate at 0.5%.",
+    "Retail trade increased +0.6 percentage points from August 2025 to August 2026."
+  ],
+  "action": "Compare an organization’s own monthly voluntary quits with the closest industry benchmark and investigate differences using confidential aggregate employee feedback.",
+  "chart": {
+    "title": "Monthly quits rates by industry",
+    "categories": [
+      "Accommodation and food services",
+      "Retail trade",
+      "Other services",
+      "Arts, entertainment, and recreation",
+      "Mining and logging"
+    ],
+    "values": [
+      3.5,
+      3.0,
+      2.7,
+      2.3,
+      2.3
+    ],
+    "unit": "Quits as % of employment"
+  },
+  "problem": "How do U.S. voluntary separation rates vary by industry, and where should an employer benchmark retention?",
+  "grain": "One published industry-level, seasonally adjusted quits-rate comparison for August 2025 and August 2026. The 2026 estimates were preliminary when published.",
+  "definitions": [
+    "Monthly quits rate = number of quits during the month ÷ employment × 100, as defined by BLS.",
+    "Quits are generally voluntary separations and exclude retirements and transfers to other locations.",
+    "Year-over-year change is August 2026 rate minus August 2025 rate, in percentage points.",
+    "These are monthly, seasonally adjusted survey estimates, not annual employee turnover rates."
+  ],
+  "caveats": "This is a small manually transcribed extract of a BLS table, not individual-level employee data. It cannot identify reasons for leaving, employee characteristics or causal factors. The latest month was preliminary at publication; estimates can be revised and survey uncertainty matters. Industry comparisons do not control for workforce composition.",
+  "nextsteps": [
+    "Align the organization’s quits definition, month and denominator with the BLS definition.",
+    "Compare against the closest industry over a longer series, accounting for sample uncertainty.",
+    "Use aggregated exit feedback and a voluntary intervention to test actionable hypotheses."
+  ],
+  "quality": "19 transcribed table rows, including one all-industry total; source values are seasonally adjusted rates. All 19 rows have both published comparison values. The total is excluded from the industry ranking.",
+  "citation": "U.S. Bureau of Labor Statistics, The Economics Daily, “Quits rate 3.5 percent in accommodation and food services, August 2026,” 13 October 2026.",
+  "source": "https://www.bls.gov/opub/ted/2026/quits-rate-3-5-percent-in-accommodation-and-food-services-august-2026.htm"
+}

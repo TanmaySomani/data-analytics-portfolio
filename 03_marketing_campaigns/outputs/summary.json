@@ -1,0 +1,57 @@
+{
+  "kind": "marketing",
+  "title": "Marketing Campaign Analysis",
+  "metrics": [
+    [
+      "Campaign records",
+      "41,188"
+    ],
+    [
+      "Subscriptions",
+      "4,640"
+    ],
+    [
+      "Subscription rate",
+      "11.3%"
+    ],
+    [
+      "Contact methods",
+      "2"
+    ]
+  ],
+  "findings": [
+    "14.7% of cellular records and 5.2% of telephone records ended in subscription.",
+    "Records with prior campaign success have 65.1% subscription rate (1,373 records).",
+    "Overall, 4,640 of 41,188 records indicate a term-deposit subscription."
+  ],
+  "action": "Use the differences to design a prospective, randomized channel or contact-strategy test, recording costs, eligibility and incremental subscriptions.",
+  "chart": {
+    "title": "Subscription rate by contact method",
+    "categories": [
+      "cellular",
+      "telephone"
+    ],
+    "values": [
+      14.7,
+      5.2
+    ],
+    "unit": "Share of records subscribing (%)"
+  },
+  "problem": "How do observed term-deposit subscription rates differ across bank telemarketing records?",
+  "grain": "One campaign example in the bank-additional-full.csv sample of a Portuguese bank, May 2008 to November 2010. Multiple contacts can be required for one client.",
+  "definitions": [
+    "Subscription rate = records with y = yes ÷ all records in the segment.",
+    "Contact is the recorded communication type; campaign counts contacts for the client during the current campaign.",
+    "Previous outcome describes the previous campaign and includes a nonexistent category.",
+    "Rates are record-weighted; without customer IDs, unique customers and independent customer-level conversion cannot be calculated."
+  ],
+  "caveats": "The source records phone campaigns, not paid search or social. It has no spend, revenue, cost or randomized assignment: CPA, ROAS and incremental effect cannot be computed. Channel and previous-campaign comparisons are observational and may reflect targeting or economic conditions. Last-call duration is known only after a call and must not be used for pre-call targeting. The data is historical.",
+  "nextsteps": [
+    "Check campaign eligibility and contact histories before comparing audience groups.",
+    "Avoid using call duration as a predictor before the call; review sensitive attributes and fair treatment.",
+    "Randomize a channel strategy and collect spend and margin before estimating incremental ROI."
+  ],
+  "quality": "41,188 campaign records; 0 blank cells; 12,718 source values labeled unknown. 12 identical-looking rows retained because there is no customer ID or event ID.",
+  "citation": "Moro, S., Rita, P., & Cortez, P. (2014), Bank Marketing, UCI Machine Learning Repository, https://doi.org/10.24432/C5K306 (CC BY 4.0).",
+  "source": "https://archive.ics.uci.edu/dataset/222/bank+marketing"
+}

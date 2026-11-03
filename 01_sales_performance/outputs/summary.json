@@ -1,0 +1,63 @@
+{
+  "kind": "sales",
+  "title": "Sales Performance Analysis",
+  "metrics": [
+    [
+      "Positive line value",
+      "£10,666,685"
+    ],
+    [
+      "Invoices",
+      "19,960"
+    ],
+    [
+      "Sales lines",
+      "530,104"
+    ],
+    [
+      "Countries",
+      "38"
+    ]
+  ],
+  "findings": [
+    "United Kingdom accounts for 84.6% of included line value.",
+    "The highest-value stock code is DOT, at £206,249.",
+    "2011-11 has the largest included line value at £1,509,496."
+  ],
+  "action": "Review high-value products and markets with the retailer’s returns, product costs and fulfilment data before deciding where to change pricing or inventory.",
+  "chart": {
+    "title": "Included line value by country",
+    "categories": [
+      "United Kingdom",
+      "Netherlands",
+      "EIRE",
+      "Germany",
+      "France"
+    ],
+    "values": [
+      9.03,
+      0.29,
+      0.28,
+      0.23,
+      0.21
+    ],
+    "unit": "£ millions"
+  },
+  "problem": "How did an online retailer’s observed invoice-line value vary by country, product and month?",
+  "grain": "One row per invoice line for a UK-based online retailer, 1 Dec 2010 to 9 Dec 2011. The company sells gifts and includes wholesale customers.",
+  "definitions": [
+    "Included line value = Quantity × UnitPrice in pounds, restricted to non-cancellation lines with positive quantity and unit price.",
+    "Invoices = distinct InvoiceNo among included lines; it is not necessarily a count of unique customers.",
+    "Country share = included country line value ÷ all included line value.",
+    "Monthly comparisons use calendar months; December 2010 and December 2011 are incomplete."
+  ],
+  "caveats": "This is positive invoice-line value, not net revenue: cancelled and negative lines are excluded rather than matched back to orders. Prices and amounts may include postage, fees and unusual adjustments. There is no product cost, so profit, margin and loss-making products cannot be computed. The dataset is historical and from a single retailer.",
+  "nextsteps": [
+    "Reconcile invoices, cancellations and credit notes with accounting records.",
+    "Join product cost, delivery fees and returns to calculate contribution margin.",
+    "Investigate seasonal demand using complete comparable months and more years of data."
+  ],
+  "quality": "541,909 source lines; 9,288 cancellation-prefixed lines; 11,805 nonpositive quantity or price lines; 11,805 excluded by either rule; 135,080 source lines lack customer ID. These categories overlap. 5,268 exact duplicate-looking rows are retained because they may represent distinct invoice lines.",
+  "citation": "Chen, D. (2015), Online Retail, UCI Machine Learning Repository, https://doi.org/10.24432/C5BW33 (CC BY 4.0).",
+  "source": "https://archive.ics.uci.edu/dataset/352/online+retail"
+}
